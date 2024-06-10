@@ -1,0 +1,89 @@
+a. Odd numbers in an array
+
+let oddNum= arr=>{
+    for (let i=0; i<arr.length; i++){
+        if (arr[i]%2 != 0){
+            console.log(arr[i]);
+        }
+    }
+}
+let array= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log("Odd numbers in array are:");
+oddNum(array);
+
+
+b. All strings to title caps
+
+let titleCaps= arr=> {
+    for(let i= 0; i<arr.length; i++) {
+        arr[i]= arr[i].charAt(0).toUpperCase() + arr[i].slice(1).toLowerCase();
+    }
+    return arr;
+}
+let array = ["hi", "guvi", "zen", "class"];
+let newArray = titleCaps(array);
+console.log("Array with converted strings:", newArray);
+
+
+c. Sum of all numbers in an array
+
+let sum= arr=>{
+    let sum= 0;
+    for (let i=0; i<arr.length; i++){
+        sum += arr[i];
+    }
+    return sum;
+}
+let array = [1, 2, 3, 4, 5];
+let totalSum = sum(array);
+console.log("Sum of numbers in array:", totalSum);
+
+
+d. All prime numbers in an array
+
+let isPrime = num=> {
+    if (num<= 1) {
+        return false;
+    }
+    for (let i= 2; i<=Math.sqrt(num); i++) {
+        if (num%i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+let getPrime= arr=> {
+    let primeNum=[];
+    for (let i=0; i<arr.length; i++) {
+        if (isPrime(arr[i])) {
+            primeNum.push(arr[i]);
+        }
+    }
+    return primeNum;
+}
+let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let primeNum = getPrime(array);
+console.log("Prime numbers:", primeNum);
+
+
+e. Return all the palindromes in an array
+
+let isPalindrome= str=> {
+    let reversedStr= str.split('').reverse().join('');
+    return str == reversedStr;
+}
+
+let getPalindromes= arr=> {
+    let palindromes= [];
+    for (let i=0; i<arr.length; i++) {
+        if (isPalindrome(arr[i])) {
+            palindromes.push(arr[i]);
+        }
+    }
+    return palindromes;
+}
+let array = ["wow", "mom", "hello", "madam", "hi"];
+let palindromes = getPalindromes(array);
+console.log("Palindromes:", palindromes);
+
+
